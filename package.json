@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@babel/core": ">=7.12.10 <8.0.0",
-    "preact": "^10.11.2"
+    "preact": "^10.11.2",
+    "wouter": "^2.8.0-alpha.2"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
