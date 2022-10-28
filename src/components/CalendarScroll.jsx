@@ -1,7 +1,8 @@
 const CalendarScroll = () => {
 
   return (
-    <div className=" flex flex-col sm:flex-row bg-indigo-600 w-1/2 min-h-screen">
+    //md:flex-col md:w-1/2 md:min-h-screen
+    <div className=" flex bg-indigo-600 sm:flex-row sm:w-screen sm:h-screen calendar-scroll">
       <h1>Calendar Scroll</h1>
     </div>
   )

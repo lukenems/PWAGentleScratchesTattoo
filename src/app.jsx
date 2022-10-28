@@ -7,11 +7,11 @@ export function App() {
 
   return (
     <>
-    <Nav />
-    <div className='flex flex-col sm:flex-row min-w-full'>
-      <FlashScroll />
-      <CalendarScroll />
-    </div>
+      <Nav />
+      <div className='flex flex-col sm:flex-row min-w-full min-h-screen'>
+        <FlashScroll />
+        <CalendarScroll />
+      </div>
     </>
   );
 }

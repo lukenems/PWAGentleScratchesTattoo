@@ -1,7 +1,7 @@
 import { Link } from "wouter/preact";
 
 const Nav = () => (
-    <nav className="fixed min-w-full">
+    <nav className="fixed min-w-full top-0">
       <div className="flex justify-between">
         <ul className="flex space-x-3">
           <li>
