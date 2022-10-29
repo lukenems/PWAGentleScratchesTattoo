@@ -3,6 +3,7 @@ import './app.css';
 import Nav from './components/Nav';
 import Landing from './pages/landing';
 import LoginForm from './components/LoginForm';
+import CustomTattooForm from './components/CustomTattooForm';
 
 export function App() {
 
@@ -15,6 +16,9 @@ export function App() {
         </Route>
         <Route path='/login'>
           <LoginForm />
+        </Route>
+        <Route path='/custom'>
+          <CustomTattooForm />
         </Route>
       </Switch>
     </>
