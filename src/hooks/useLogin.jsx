@@ -1,9 +1,9 @@
 import { useState } from 'preact/hooks';
-import { useAuthContext } from '../context/AuthContext';
+import { useAuthContext } from './useAuthContext';
 
 export const useLogin = () => {
   const [error, setError] = useState(null);
-  const [loading, setIsLoading] = setState(null);
+  const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext;
 
   const login = async (email, password) => {

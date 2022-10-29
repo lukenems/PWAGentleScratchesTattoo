@@ -1,11 +1,11 @@
-import setState from 'preact';
+import { useState } from 'preact/hooks';
 import { useLogin } from '../hooks/useLogin';
 
 
 const LoginForm = () => {
-  const [email, setEmail] = setState('');
-  const [password, setPassword] = setState('');
-  const { login, isLoading, error } = useLogin;
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { login, isLoading, error } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault;
@@ -27,15 +27,6 @@ const LoginForm = () => {
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
             Sign in to your account
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Or
-            <a
-              href="#"
-              className="font-medium text-indigo-600 hover:text-indigo-500"
-            >
-              start your 14-day free trial
-            </a>
-          </p>
         </div>
         <form className="mt-8 space-y-6" action="#" method="POST">
           <input type="hidden" name="remember" value="true" />
@@ -102,7 +93,7 @@ const LoginForm = () => {
             <button
               type="submit"
               className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              onSubmit={handleSubmit(email, password)}
+              onSubmit={handleSubmit}
               disabled={isLoading}
             >
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">

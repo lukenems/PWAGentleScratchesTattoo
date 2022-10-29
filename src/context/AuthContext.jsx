@@ -1,4 +1,5 @@
-import { createContext, useReducer, useEffect } from "preact/hooks";
+import { createContext } from 'preact';
+import { useReducer, useEffect } from "preact/hooks";
 
 export const AuthContext = createContext();
 export const authReducer = (state, action) => {
