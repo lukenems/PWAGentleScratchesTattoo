@@ -1,4 +1,20 @@
+import setState from 'preact';
+import { useLogin } from '../hooks/useLogin';
+
+
 const LoginForm = () => {
+  const [email, setEmail] = setState('');
+  const [password, setPassword] = setState('');
+  const { login, isLoading, error } = useLogin;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault;
+    await login(email, password);
+    setAuthor('');
+    setPassword('');
+  }
+
+
   return (
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
@@ -36,6 +52,7 @@ const LoginForm = () => {
                 required
                 className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 placeholder="Email address"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
@@ -50,6 +67,7 @@ const LoginForm = () => {
                 required
                 className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
@@ -84,6 +102,8 @@ const LoginForm = () => {
             <button
               type="submit"
               className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              onSubmit={handleSubmit(email, password)}
+              disabled={isLoading}
             >
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
@@ -102,6 +122,7 @@ const LoginForm = () => {
               </span>
               Sign in
             </button>
+            { error && <div className='error'>{error}</div>}
           </div>
         </form>
       </div>
