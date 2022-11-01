@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@babel/core": ">=7.12.10 <8.0.0",
+    "firebase": "^9.13.0",
     "preact": "^10.11.2",
+    "uuid": "^9.0.0",
     "wouter": "^2.8.0-alpha.2"
   },
   "devDependencies": {

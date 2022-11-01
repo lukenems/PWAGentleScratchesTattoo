@@ -1,4 +1,6 @@
 import { useState } from 'preact/hooks';
+import { useUploadImages } from '../hooks/useUploadImages';
+import { getDownloadURL } from 'firebase/storage';
 
 const CustomTattooForm = () => {
   //don't really need context here
@@ -8,10 +10,22 @@ const CustomTattooForm = () => {
   const [insta, setInsta] = useState('');
   const [desc, setDesc] = useState('');
   const [error, setError] = useState('');
+  const [imageUpload, setImageUpload] = useState(null);
 
   const handleOnClick = (e) => {
-    e.preventDefault;
+    e.preventDefault();
+    const urls = useUploadImages(imageUpload, name);
+    // const imageUrls = urls.map( ref => (
+    //   ref.getDownloadURL().then( result => {
+    //     return result
+    //   })
+    // )) <<-- doesn't work
+
+    //urls is an array of references that we wanna save and submit to backend for email
+    //hook here for sending email
+    //make another hook for putting all the state together and send to firebase
   };
+
 
   return (
     <>
@@ -33,7 +47,6 @@ const CustomTattooForm = () => {
               className="m-2 p-2"
               onChange={(e) => setInsta(e.target.value)}
               value={insta}
-              required
               placeholder="@Instagram handle"
             />
             <input
@@ -55,18 +68,20 @@ const CustomTattooForm = () => {
             <h3>Describe your design here:</h3>
             <textarea
               type="text"
-              className="text-center m-2 p-2"
+              className= "m-2 p-2"
               onChange={(e) => setDesc(e.target.value)}
               value={desc}
               rows="8"
             />
           </div>
           <div className="justify-self-center">
-            <h3>Upload a similar design/inspo here:</h3>
+            <h3>Upload a similar design/inspo here if you like!</h3>
+            <h3>*Please limit to 3 images*</h3>
             <input
-              type="button"
+              type="file"
               className="m-2 p-2"
-              value="IMG upload button"
+              onChange={(e) => {setImageUpload(e.target.files)}}
+              multiple
             />
           </div>
           <button onClick={handleOnClick} type="submit">
