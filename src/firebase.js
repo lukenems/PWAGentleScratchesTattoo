@@ -1,13 +1,12 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getStorage } from "firebase/storage"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getStorage } from "firebase/storage";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAyryjIggNNgdmZ_35nZDNAUr4NdZTeE2k",
   authDomain: "pwa-gentlescratches.firebaseapp.com",
+  databaseURL: "https://pwa-gentlescratches-default-rtdb.firebaseio.com",
   projectId: "pwa-gentlescratches",
   storageBucket: "pwa-gentlescratches.appspot.com",
   messagingSenderId: "461732908944",
@@ -18,4 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-export const storage = getStorage(app);
+const database = getDatabase(app);
+const storage = getStorage(app);
+
+export { database, storage };

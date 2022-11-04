@@ -1,17 +1,20 @@
+import { ref, uploadBytes } from 'firebase/storage';
 import { storage } from '../firebase';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 export const useUploadImages = (files, name) => {
   // const [imagePath, setImagePath] = useState([]);
-  const images = [...files]
-  let urlArray = images.map( image => {
+  console.log('inside uploadImages ', files)
+  files.forEach( image => {
     // add L-T-L of 90 days?
-    const imageRef = ref(storage, `Client_Images/${name}/${image.name}`);
-    uploadBytes(imageRef, image).then((snapshot) => {
+
+    // check image size
+    // if (image.size > 1000000 ) {
+    //   return 'One of your images is too large, please upload a smaller image'
+    // }
+
+    const storageRef = ref(storage, `Client_Images/${name}/${image.name}`);
+    uploadBytes(storageRef, image).then(() => {
       console.log('image uploaded');
     })
-      return imageRef
   })
-  console.log(urlArray)
-  return urlArray;
 }

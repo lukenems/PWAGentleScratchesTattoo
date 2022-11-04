@@ -1,6 +1,6 @@
 import { useState } from 'preact/hooks';
 import { useUploadImages } from '../hooks/useUploadImages';
-import { getDownloadURL } from 'firebase/storage';
+import { useGetImageUrls } from '../hooks/useGetImageUrls';
 
 const CustomTattooForm = () => {
   //don't really need context here
@@ -10,19 +10,31 @@ const CustomTattooForm = () => {
   const [insta, setInsta] = useState('');
   const [desc, setDesc] = useState('');
   const [error, setError] = useState('');
-  const [imageUpload, setImageUpload] = useState(null);
+  const [isUploading, setIsUploading] = useState('');
+  const [images, setImages] = useState();
+  // const [imageUrl, setImageUrl] = useState([]);
 
-  const handleOnClick = (e) => {
+
+  const handleUpload = (e) => {
     e.preventDefault();
-    const urls = useUploadImages(imageUpload, name);
-    // const imageUrls = urls.map( ref => (
-    //   ref.getDownloadURL().then( result => {
-    //     return result
-    //   })
-    // )) <<-- doesn't work
+    const files = [...e.target.files];
+    setImages(...files);
+    console.log(images)
+    setIsUploading(true);
+    useUploadImages(files, name);
+    setIsUploading(false);
+    console.log(name, images)
 
-    //urls is an array of references that we wanna save and submit to backend for email
-    //hook here for sending email
+  }
+  
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let urls = useGetImageUrls(imageUpload, name);
+    console.log('url inside upload --> ', urls);
+
+    //  hook here for sending email
+
     //make another hook for putting all the state together and send to firebase
   };
 
@@ -80,12 +92,12 @@ const CustomTattooForm = () => {
             <input
               type="file"
               className="m-2 p-2"
-              onChange={(e) => {setImageUpload(e.target.files)}}
+              onChange={handleUpload}
               multiple
             />
           </div>
-          <button onClick={handleOnClick} type="submit">
-            Submit
+          <button onClick={handleSubmit} type="submit" disabled={isUploading}>
+            {!isUploading ? 'Submit' : 'Uploading Images...'}
           </button>
           {error && <div className="error">{error}</div>}
         </div>
