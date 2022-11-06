@@ -10,29 +10,22 @@ const CustomTattooForm = () => {
   const [insta, setInsta] = useState('');
   const [desc, setDesc] = useState('');
   const [error, setError] = useState('');
-  const [isUploading, setIsUploading] = useState('');
-  const [images, setImages] = useState();
+  const [isUploading, setIsUploading] = useState(false);
   // const [imageUrl, setImageUrl] = useState([]);
 
 
-  const handleUpload = (e) => {
+  const handleUpload = async (e) => {
     e.preventDefault();
-    const files = [...e.target.files];
-    setImages(...files);
-    console.log(images)
     setIsUploading(true);
-    useUploadImages(files, name);
-    setIsUploading(false);
-    console.log(name, images)
-
+    await useUploadImages([...e.target.files], name);
   }
   
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    let urls = useGetImageUrls(imageUpload, name);
-    console.log('url inside upload --> ', urls);
-
+    const inputFiles = document.getElementById('files').files;
+    const files = [...inputFiles];
+    let urls = await useGetImageUrls(files, name)
     //  hook here for sending email
 
     //make another hook for putting all the state together and send to firebase
@@ -91,13 +84,19 @@ const CustomTattooForm = () => {
             <h3>*Please limit to 3 images*</h3>
             <input
               type="file"
+              id='files'
               className="m-2 p-2"
               onChange={handleUpload}
               multiple
+              disabled={isUploading}
             />
           </div>
-          <button onClick={handleSubmit} type="submit" disabled={isUploading}>
-            {!isUploading ? 'Submit' : 'Uploading Images...'}
+          <button 
+            onClick={handleSubmit}
+            type="submit"
+            disabled={isUploading}
+            >
+            Submit
           </button>
           {error && <div className="error">{error}</div>}
         </div>
