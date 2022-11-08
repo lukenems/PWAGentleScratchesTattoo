@@ -38,7 +38,7 @@ const CalendarScroll = () => {
             i + 1
           );
           return (
-            <div key={selected_date.toISOString()}>
+            <div key={selected_date.toISOString()} style={'border-top: white 1px solid'}>
               {selected_date.getDate()}
               <nylas-agenda
                 header_type="none"
