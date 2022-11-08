@@ -21,12 +21,24 @@
 .read-the-docs {
   color: #888;
 }
+
 .flash-scroll {
   height: 50vh;
 }
+
 .calendar-scroll {
   height: 50vh;
 }
+
+/* ul.events {
+  height: 6rem;
+}
+
+iframe {
+  display: none;
+} */
+
+/* Media Queries */
 
 @media (min-width: 640px) {
   .flash-scroll {

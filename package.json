@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/core": ">=7.12.10 <8.0.0",
+    "@nylas/components-agenda": "^1.1.6",
     "firebase": "^9.13.0",
     "preact": "^10.11.2",
     "uuid": "^9.0.0",
