@@ -7,8 +7,7 @@ const SchedulerEditor = () => {
   btn.addEventListener('click', function () {
     nylas.scheduler.show({
       auth: {
-        // Account <ACCESS_TOKEN> with active calendar scope
-        accessToken: 'ZKG8EGSBz9WkHfAi81jpcAMisdsZWY',
+        accessToken:import.meta.env.VITE_NYLAS_ACCESS_TOKEN,
       },
       style: {
         // Style the schdule editor

@@ -44,7 +44,7 @@ const CalendarScroll = () => {
                 header_type="none"
                 selected_date={selected_date}
                 condensed_view={true}
-                id={process.env.NYLAS_CALENDAR_ID}
+                id={import.meta.env.VITE_NYLAS_CALENDAR_ID}
                 allowed_dates
                 hide_current_time={true}
                 show_no_events_message="Available"

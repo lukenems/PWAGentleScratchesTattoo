@@ -1,6 +1,7 @@
 import { useState } from 'preact/hooks';
 import { useAuthContext } from './useAuthContext';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase';
 
 export const useLogin = () => {
   const [error, setError] = useState(null);
@@ -11,15 +12,12 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then ((userCredential) => {
-        const user = userCredential.user;
-        console.log('userrrr  ', user)
-        localStorage.setItem('user', JSON.stringify(json));
+        const token = userCredential.user.accessToken;
         setError(null);
         setIsLoading(false);
-        dispatch({type: 'LOGIN', payload:user});
+        dispatch({type: 'LOGIN', payload:token});
       })
       .catch((error) => {
         const errorCode = error.code;
