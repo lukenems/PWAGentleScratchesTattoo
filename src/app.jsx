@@ -12,17 +12,18 @@ export function App() {
     <>
       <Nav />
       <Switch>
-        <Route path='/'>
+        <Route exact path='/'>
           <Landing />
         </Route>
-        <Route path='/login'>
+        <Route exact path='/login'>
           <LoginForm />
         </Route>
-        <Route path='/custom'>
+        <Route exact path='/custom'>
           <CustomTattooForm />
         </Route>
-        <Route path='/admin' />
+        <Route exact path='/admin'>
           <EnsureAdmin />
+        </Route>  
       </Switch>
     </>
   );

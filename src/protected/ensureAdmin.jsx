@@ -3,12 +3,12 @@ import { Redirect } from 'wouter/preact';
 import AdminLanding from '../pages/adminLanding';
 
 const EnsureAdmin = () => {
-  const user = useAuthContext();
+  const user = useAuthContext().user;
   return (
     <>
-      {user === localStorage.getItem('user')
-        ? <AdminLanding />
-        : <Redirect to="/"/>
+      {!user
+        ? <Redirect to="/"/>
+        : <AdminLanding />
       }
     </>
   )

@@ -12,7 +12,7 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    signInWithEmailAndPassword(auth, email, password)
+    await signInWithEmailAndPassword(auth, email, password)
       .then ((userCredential) => {
         const token = userCredential.user.accessToken;
         setError(null);

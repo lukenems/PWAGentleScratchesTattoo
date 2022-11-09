@@ -11,10 +11,14 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(email, password);
-    setEmail('');
-    setPassword('');
-    setLocation('/admin', { replace: true })
+    try {
+      await login(email, password);
+      setEmail('');
+      setPassword('');
+      setLocation('/admin', { replace: true });
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   return (
