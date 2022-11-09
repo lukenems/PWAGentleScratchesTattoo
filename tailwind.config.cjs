@@ -1,6 +1,10 @@
-const config = {
+module.exports = {
   mode: 'jit',
-  purge: ["./src/**/*.{html,js, jsx}"],
+  purge: ["./src/components/*.{jsx}",
+    "./src/pages/*.{jsx}",
+    "./*.{html,jsx, js}",
+    "./*{html"
+],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -9,8 +13,6 @@ const config = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')
   ],
 }
-
-export default {config}

@@ -22,7 +22,7 @@ export const useLogin = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError(`Error code ${error.code}: ${errorMessage}`)
+        setError(`Error code ${errorCode}: ${errorMessage}`)
       })
   }
   return { login, isLoading, error };

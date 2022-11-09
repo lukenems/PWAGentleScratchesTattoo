@@ -18,7 +18,6 @@ const AdminBookings = () => {
         hide_current_time={true}
         show_no_events_message="Available"
         theme="theme-1"
-        className="date"
       />
       <SchedulerEditor />
     </>

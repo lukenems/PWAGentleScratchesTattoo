@@ -6,14 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tailwind build": "npx tailwind -o dist/output.css"
   },
   "dependencies": {
     "@babel/core": ">=7.12.10 <8.0.0",
     "@nylas/components-agenda": "^1.1.6",
-    "dotenv": "^16.0.3",
     "firebase": "^9.13.0",
     "preact": "^10.11.2",
+    "preact-cli-tailwind": "^3.0.0",
     "uuid": "^9.0.0",
     "wouter": "^2.8.0-alpha.2"
   },
@@ -23,7 +24,6 @@
     "eslint-config-preact": "^1.3.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "preact-cli-tailwind": "^3.0.0",
     "prettier": "2.7.1",
     "tailwindcss": "^2.2.19",
     "vite": "^3.2.0"
