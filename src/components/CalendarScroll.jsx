@@ -44,7 +44,7 @@ const CalendarScroll = () => {
                 header_type="none"
                 selected_date={selected_date}
                 condensed_view={true}
-                id="e734ac6e-caa5-4b17-a5e9-97d39dbe7ad7"
+                id={process.env.NYLAS_CALENDAR_ID}
                 allowed_dates
                 hide_current_time={true}
                 show_no_events_message="Available"
@@ -55,6 +55,12 @@ const CalendarScroll = () => {
           );
         })}
       </div>
+      <button
+        className="fixed bottom-4 w-1/3"
+        style="right: 10%;"
+      >
+        <a href="https://schedule.nylas.com/gentlescratches-45min" style="color: white;">Book it</a>
+      </button>
       {(document.getElementsByTagName('nylas-agenda')) ? setDayArray(document.getElementsByTagName('nylas-agenda')) : console.log() }
     </div>
   );

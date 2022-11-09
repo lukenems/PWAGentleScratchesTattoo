@@ -4,14 +4,14 @@ import { getStorage } from "firebase/storage";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAyryjIggNNgdmZ_35nZDNAUr4NdZTeE2k",
-  authDomain: "pwa-gentlescratches.firebaseapp.com",
-  databaseURL: "https://pwa-gentlescratches-default-rtdb.firebaseio.com",
-  projectId: "pwa-gentlescratches",
-  storageBucket: "pwa-gentlescratches.appspot.com",
-  messagingSenderId: "461732908944",
-  appId: "1:461732908944:web:6f690c07eb21827a0aed15",
-  measurementId: "G-7GH4BQTGV9"
+  apiKey: process.env.PREACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.PREACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.PREACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.PREACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.PREACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.PREACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.PREACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.PREACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase

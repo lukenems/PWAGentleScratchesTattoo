@@ -4,6 +4,7 @@ import './index.css'
 import { AuthContextProvider } from './context/AuthContext';
 // render(<App />, document.getElementById('app'))
 
+
 const rootElement = document.getElementById('app');
 if (rootElement.hasChildNodes()) {
   hydrate(
