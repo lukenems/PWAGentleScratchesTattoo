@@ -31,7 +31,7 @@ const SchedulerEditor = () => {
         className="fixed bottom-4 w-1/3"
         style="right: 10%;"
       >
-        Launch Schedule Editor
+        Update Your Schedule
       </button>
     </div>
   );

@@ -6,7 +6,7 @@ import { auth } from '../firebase';
 export const useLogin = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
-  const { dispatch } = useAuthContext;
+  const { dispatch } = useAuthContext();
 
   const login = async (email, password) => {
     setIsLoading(true);
@@ -17,12 +17,13 @@ export const useLogin = () => {
         const token = userCredential.user.accessToken;
         setError(null);
         setIsLoading(false);
-        dispatch({type: 'LOGIN', payload:token});
+        localStorage.setItem('user', JSON.stringify(token));
+        dispatch({type: 'LOGIN', payload:JSON.stringify(token)});
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError(`Error code ${errorCode}: ${errorMessage}`)
+        setError(`Error code ${errorCode}: ${errorMessage}`);
       })
   }
   return { login, isLoading, error };

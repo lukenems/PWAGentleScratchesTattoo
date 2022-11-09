@@ -1,11 +1,11 @@
-import AdminBookings from "../components/AdminBookings";
+import AdminBookings from "../protected/AdminBookings";
 
 
 const AdminLanding = () => {
 
   return (
     <>
-      <header></header>
+      <header>Somethin</header>
       <AdminBookings />
     </>
   )

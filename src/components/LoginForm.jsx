@@ -1,17 +1,20 @@
 import { useState } from 'preact/hooks';
 import { useLogin } from '../hooks/useLogin';
+import { useLocation } from 'wouter/preact';
 
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login, isLoading, error } = useLogin();
+  const [location, setLocation] = useLocation()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
-    setAuthor('');
+    setEmail('');
     setPassword('');
+    setLocation('/admin', { replace: true })
   }
 
   return (
