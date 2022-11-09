@@ -17,7 +17,7 @@ const CalendarScroll = () => {
   }, [dayArray]);
 
   return (
-    <div className=" flex bg-indigo-600 sm:flex-row sm:w-screen sm:h-screen calendar-scroll">
+    <div className=" flex bg-indigo-600 sm:flex-row sm:w-screen sm:h-screen calendar-scroll pt-5">
       <div className="grid grid-cols-7 gap-0 h-screen overflow-auto">
         <div>Mon</div>
         <div>Tue</div>
@@ -56,7 +56,7 @@ const CalendarScroll = () => {
       </div>
       <button
         className="fixed bottom-4 w-1/3"
-        style="right: 10%;"
+        style="right: 9%;"
       >
         <a href="https://schedule.nylas.com/gentlescratches-45min" style="color: white;">Book it</a>
       </button>
