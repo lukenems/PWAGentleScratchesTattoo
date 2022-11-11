@@ -5,6 +5,7 @@ import Landing from './pages/landing';
 import LoginForm from './components/LoginForm';
 import CustomTattooForm from './components/CustomTattooForm';
 import EnsureAdmin from './protected/ensureAdmin';
+import CustomReqThanks from './pages/customReqThanks';
 
 export function App() {
 
@@ -23,6 +24,9 @@ export function App() {
         </Route>
         <Route exact path='/admin'>
           <EnsureAdmin />
+        </Route>
+        <Route exact path='/custom/thank-you-custom'>
+          <CustomReqThanks />
         </Route>  
       </Switch>
     </>

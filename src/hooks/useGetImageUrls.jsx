@@ -1,7 +1,7 @@
 import { storage } from "../firebase";
 import { getDownloadURL, ref } from "firebase/storage";
 
-export const useGetImageUrls = async ( files, name) => {
+const useGetImageUrls = async ( files, name) => {
   let urlArray = [];
 
   for (let i=0; i <files.length; i++) {
@@ -12,3 +12,5 @@ export const useGetImageUrls = async ( files, name) => {
   }
   return urlArray
 }
+
+export default useGetImageUrls;
