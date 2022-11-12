@@ -2,7 +2,7 @@ import { Switch, Route } from 'wouter/preact';
 import './app.css';
 import Nav from './components/Nav';
 import Landing from './pages/landing';
-import LoginForm from './components/LoginForm';
+import Login from './pages/login';
 import CustomTattooForm from './components/CustomTattooForm';
 import EnsureAdmin from './protected/ensureAdmin';
 import CustomReqThanks from './pages/customReqThanks';
@@ -17,7 +17,7 @@ export function App() {
           <Landing />
         </Route>
         <Route exact path='/login'>
-          <LoginForm />
+          <Login />
         </Route>
         <Route exact path='/custom'>
           <CustomTattooForm />
