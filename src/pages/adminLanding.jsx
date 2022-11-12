@@ -8,27 +8,27 @@ const AdminLanding = () => {
 
   return (
     <div className="bg-gradient-to-r from-green-500 via-transparent to-green-500 h-full">
-      <div className="flex flex-col flex-between justify-around sm:flex-row">
-        <div className="flex flex-col w-1/3 items-center py-12 px-4 sm:px-3 lg:px-4">
+      <div className="flex flex-col flex-between justify-around sm:flex-row pt-8">
+        <div className="flex flex-col w-1/3 items-center py-2 px-2 sm:px-2 mx-3 bg-purple-900 border-2 rounded-l-lg border-white">
           <h1>First</h1>
           <h1>Full</h1>
         </div>
-        <div className="flex flex-col w-1/3 items-center text-center py-12 px-4 sm:px-3 lg:px-4">
+        <div className="flex flex-col w-1/3 items-center text-center py-2 px-2 sm:px-2 mx-3 bg-purple-900 border-2 rounded-2xl border-white">
           <h1>Upcoming Bookings</h1>
-          <div className="h-200px">
-          <nylas-agenda
-            header_type="full"
-            allow_date_change={true}
-            selected_date={selected_date}
-            condensed_view={true}
-            id={import.meta.env.VITE_NYLAS_CALENDAR_ID}
-            allowed_dates
-            hide_current_time={true}
-            theme="theme-1"
-          />
+          <div className="h-auto min-w-full">
+            <nylas-agenda
+              header_type="full"
+              allow_date_change={true}
+              selected_date={selected_date}
+              condensed_view={true}
+              id={import.meta.env.VITE_NYLAS_CALENDAR_ID}
+              allowed_dates
+              hide_current_time={true}
+              theme="theme-1"
+            />
           </div>
         </div>
-        <div className="flex flex-col w-1/3 items-center py-12 px-4 sm:px-3 lg:px-4">
+        <div className="flex flex-col w-1/3 items-center text-center py-2 px-2 sm:px-2 mx-3 bg-purple-900 border-2 rounded-r-lg border-white">
           <h1>Recent Custom Requests</h1>
           <h1>Full</h1>
         </div>
