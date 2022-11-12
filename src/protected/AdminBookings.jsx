@@ -1,5 +1,3 @@
-import SchedulerEditor from './SchedulerEditor';
-
 const AdminBookings = () => {
   const today = new Date();
   const selected_date = new Date(
@@ -19,7 +17,6 @@ const AdminBookings = () => {
         show_no_events_message="Available"
         theme="theme-1"
       />
-      <SchedulerEditor />
     </>
   )
 }

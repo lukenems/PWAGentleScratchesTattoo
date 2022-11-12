@@ -29,7 +29,7 @@ const SchedulerEditor = () => {
       <button
         id="schedule-editor"
         className="fixed bottom-4 w-1/3"
-        style="right: 10%;"
+        style="right: 5%;"
       >
         Update Your Schedule
       </button>
