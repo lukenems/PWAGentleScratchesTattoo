@@ -14,11 +14,9 @@ const AdminLanding = () => {
           <h1>Upcoming Bookings</h1>
           <div className="h-auto min-w-full">
             <nylas-agenda
-              header_type="full"
-              allow_date_change={true}
               selected_date={today}
               condensed_view={true}
-              id={import.meta.env.VITE_NYLAS_CALENDAR_ID}
+              id={import.meta.env.VITE_NYLAS_ADMIN_AGENDA_ID}
               allowed_dates
               hide_current_time={true}
               theme="theme-1"

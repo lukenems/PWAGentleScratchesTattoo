@@ -12,7 +12,17 @@ const CalendarScroll = () => {
   useEffect(() => {
     for (let day in dayArray) {
       if ( day === 'length') { break };
-      dayArray[day].shadowRoot.children[2].firstElementChild.style.display = 'none';
+      let main = dayArray[day].shadowRoot.children[2];
+      main.firstElementChild.style.display = 'none';
+      main.style.height ='auto';
+      // dig for event display adjustment
+      let elem = main.querySelectorAll('div.timespan > ul.events');
+      if (elem[0].children.length > 2) {
+        const apptList = elem[0].children;
+        for ( let i=2; i < apptList.length; i++ ) {
+          apptList[i].lastChild.childNodes[2].style.whiteSpace = 'normal';
+        }
+      }
     }
   }, [dayArray]);
 
@@ -38,16 +48,19 @@ const CalendarScroll = () => {
             i + 1
           );
           return (
-            <div key={selected_date.toISOString()} style={'border-top: white 1px solid'}>
+            <div 
+              key={selected_date.toISOString()} 
+              style={'border-top: white 1px solid'}
+              date-id={selected_date.getDate()}  
+            >
               {selected_date.getDate()}
               <nylas-agenda
                 header_type="none"
                 selected_date={selected_date}
                 condensed_view={true}
-                id={import.meta.env.VITE_NYLAS_CALENDAR_ID}
-                allowed_dates
+                id={import.meta.env.VITE_NYLAS_CALENDAR_SCROLL_ID}
                 hide_current_time={true}
-                show_no_events_message="Available"
+                display_metadata={false}
                 theme="theme-1"
               />
             </div>
