@@ -3,7 +3,12 @@ import { storage } from '../firebase';
 
 const useUploadImages = async (files, name) => {
   files.forEach( async image => {
-    const storageRef = ref(storage, `Client_Images/${name}/${image.name}`);
+    if (name == 'Flash_Upload') {
+      const storageRef = ref(storage,  `${name}/${image.name}`);
+    } else {
+      const storageRef = ref(storage, `${'Client_Images'}/${name}/${image.name}`)
+    }
+    
     await uploadBytes(storageRef, image)
       .then(() => {
       console.log('image uploaded');

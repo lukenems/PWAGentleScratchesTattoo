@@ -1,5 +1,5 @@
+import FlashUpload from '../components/flashUpload';
 import SchedulerEditor from '../protected/SchedulerEditor';
-
 
 const AdminLanding = () => {
   const today = new Date();
@@ -28,11 +28,7 @@ const AdminLanding = () => {
           <div className="px-3 bg-gray-500"></div>
         </div>
       </div>
-      <div className="flex flex-col min-h-full items-center py-12 px-4 sm:px-6 lg:px-8">
-        <h2>Upload More Flash</h2>
-        <p>Reminder about file sizes here:</p>
-        <button type='files'>Select Files</button>
-      </div>
+      <FlashUpload />
       <SchedulerEditor />
     </div>
   )
