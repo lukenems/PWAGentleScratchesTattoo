@@ -20,8 +20,8 @@ const Nav = () => {
 
         <div>
           {user
-             ? <Link className="text-white" href="/admin">Dashboard</Link>
-             : <Link className="text-white" href="/login">Sign in</Link>
+             ? <Link className="text-white z-9" href="/admin">Dashboard</Link>
+             : <Link className="text-white z-9" href="/login">Sign in</Link>
             }
         </div>
       </div>

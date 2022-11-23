@@ -5,11 +5,10 @@ import { useEffect, useState } from 'preact/hooks';
 const Landing = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [buttonLoad, setButtonLoad] = useState(false);
-  let coverForFadeOut;
+  
   // add login in here for banner to cover screen until calendar and flash are loaded
   // maybe even just a simple spinner
   useEffect(() => {
-    coverForFadeOut = document.getElementById('landing-cover');
     setTimeout(() => {
       setButtonLoad(true);
     }, 1500);
@@ -17,7 +16,6 @@ const Landing = () => {
 
   const enterClick = (e) => {
     e.preventDefault();
-    coverForFadeOut.classList.add('cover-fade');
     setIsLoaded(true);
   }
 

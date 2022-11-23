@@ -1,13 +1,17 @@
 import { storage } from "../firebase";
 import { getDownloadURL, ref } from "firebase/storage";
 
-const useGetImageUrls = async ( files, name) => {
+const useGetImageUrls = async (files, name) => {
   let urlArray = [];
-
+  let storageRef;
   for (let i=0; i <files.length; i++) {
-    const storageRef = ref(storage, `Client_Images/${name}/${files[i].name}`);
+    if (name == 'Flash_Upload') {
+      storageRef = ref(storage, `${name}/${files[i].name}`);
+    } else {
+      storageRef = ref(storage, `Client_Images/${name}/${files[i].name}`);
+    }
     await getDownloadURL(storageRef)
-      .then( url => urlArray.push(url) )
+      .then(url => urlArray.push(url) )
       .catch(error => console.log(error) )
   }
   return urlArray

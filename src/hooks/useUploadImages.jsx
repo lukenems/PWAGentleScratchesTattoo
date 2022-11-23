@@ -7,7 +7,7 @@ const useUploadImages = async (files, name) => {
     if (name == 'Flash_Upload') {
       storageRef = ref(storage,  `${name}/${image.name}`);
     } else {
-      storageRef = ref(storage, `Client_Images/${name}/${image.name}`)
+      storageRef = ref(storage, `Client_Images/${name}/${image.name}`);
     }
     await uploadBytes(storageRef, image)
       .then(() => {
