@@ -22,9 +22,41 @@
   color: #888;
 }
 
+/* Flash Scroll Styles */
+
 .flash-scroll {
   height: 50vh;
 }
+
+#landing-cover {
+  display: flex;
+  z-index: 10;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color:#f5f5dc;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+}
+
+#landing-cover h3 {
+  font-size: 2rem;
+}
+
+#landing-cover img {
+  min-width: 150px;
+  min-height: 150px;
+  height: 300px;
+}
+
+.cover-fade {
+  animation-name: coverFade;
+  animation-duration: 1s;
+}
+
+/* Calendar Scroll Styles */
 
 .calendar-scroll {
   height: 50vh;
@@ -46,5 +78,15 @@ iframe {
   }
   .calendar-scroll {
     height: 100vh;
+  }
+}
+
+/* Animations */
+@keyframes coverFade {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
   }
 }
