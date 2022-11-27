@@ -12,8 +12,8 @@ const FlashUpload = () => {
     await useUploadImages([...e.target.files], 'Flash_Upload');
     setTimeout( async () => {
       try {
-        await useGetImageUrls([...e.target.files], 'Flash_Upload')
-        setUploadProcessing(false)
+        await useGetImageUrls([...e.target.files], 'Flash_Upload');
+        setUploadProcessing(false);
       } catch(error) {
         console.log(error);
       }
@@ -33,14 +33,14 @@ const FlashUpload = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-full items-center py-12 px-4 sm:px-6 lg:px-8">
+    <>
       <h2>Upload More Flash</h2>
       <p>Reminder about file sizes here:</p>
       <input 
         type='file'
         id='files'
         onChange={handleUpload}
-        className='text-gray-200' 
+        className='text-gray-200 pl-16' 
         multiple
         >
       </input>
@@ -55,7 +55,7 @@ const FlashUpload = () => {
       }
         {!uploadProcessing ? 'Upload' : 'Processing...'}
       </button>
-    </div>
+    </>
   )
 }
 

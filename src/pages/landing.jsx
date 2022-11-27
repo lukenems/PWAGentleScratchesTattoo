@@ -17,16 +17,14 @@ const Landing = () => {
   const enterClick = (e) => {
     e.preventDefault();
     setIsLoaded(true);
+    setTimeout(() => {
+      const landingCover = document.getElementById('landing-cover');
+      landingCover.style.display = 'none';
+    }, 2500);
   }
 
   return (
     <div className="flex flex-col sm:flex-row min-w-full min-h-screen">
-      {isLoaded ? (
-        <>
-          <FlashScroll />
-          <CalendarScroll />
-        </>
-      ) : (
         <div id="landing-cover">
           <img src="" alt="Strawberry with sexy librarian glasses" />
           <h3>Welcome to</h3>
@@ -38,12 +36,17 @@ const Landing = () => {
               className='text-gray-200 animate-bounce'
               id='landing-btn'
               >
-                Enter
+                {!isLoaded ? 'Enter' : 'Come on in!'}
               </button>
             }
           </div>
         </div>
-      )}
+        {isLoaded &&
+          <>
+            <FlashScroll />
+            <CalendarScroll />
+          </>
+        }
     </div>
   );
 };
