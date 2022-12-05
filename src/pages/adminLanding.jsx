@@ -1,4 +1,4 @@
-import FlashUpload from '../components/flashUpload';
+import FlashUpload from '../components/FlashUpload';
 import SchedulerEditor from '../protected/SchedulerEditor';
 
 const AdminLanding = () => {

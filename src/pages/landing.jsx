@@ -20,33 +20,32 @@ const Landing = () => {
     setTimeout(() => {
       const landingCover = document.getElementById('landing-cover');
       landingCover.style.display = 'none';
+      localStorage.setItem('hasLanded', true)
     }, 2500);
   }
 
   return (
     <div className="flex flex-col sm:flex-row min-w-full min-h-screen">
-        <div id="landing-cover">
-          <img src="" alt="Strawberry with sexy librarian glasses" />
-          <h3>Welcome to</h3>
-          <h1>Gentle Scratchess Tattoo</h1>
-          <div className='m-2 p-3 h-10 w-15'>
-            { buttonLoad && 
-              <button 
-              onClick={enterClick}
-              className='text-gray-200 animate-bounce'
-              id='landing-btn'
-              >
-                {!isLoaded ? 'Enter' : 'Come on in!'}
-              </button>
-            }
+        {!localStorage.getItem('hasLanded') &&
+          <div id="landing-cover">
+            <img src="" alt="Strawberry with sexy librarian glasses" />
+            <h3>Welcome to</h3>
+            <h1>Gentle Scratchess Tattoo</h1>
+            <div className='m-2 p-3 h-10 w-15'>
+              { buttonLoad && 
+                <button 
+                onClick={enterClick}
+                className='text-gray-200 animate-bounce'
+                id='landing-btn'
+                >
+                  {!isLoaded ? 'Enter' : 'Come on in!'}
+                </button>
+              }
+            </div>
           </div>
-        </div>
-        {isLoaded &&
-          <>
-            <FlashScroll />
-            <CalendarScroll />
-          </>
         }
+        <FlashScroll />
+        <CalendarScroll />
     </div>
   );
 };
