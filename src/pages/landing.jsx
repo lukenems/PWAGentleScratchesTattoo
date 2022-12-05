@@ -1,6 +1,7 @@
 import FlashScroll from '../components/FlashScroll';
 import CalendarScroll from '../components/CalendarScroll';
 import { useEffect, useState } from 'preact/hooks';
+import { setLocation } from 'wouter/preact'
 
 const Landing = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -18,9 +19,10 @@ const Landing = () => {
     e.preventDefault();
     setIsLoaded(true);
     setTimeout(() => {
-      const landingCover = document.getElementById('landing-cover');
-      landingCover.style.display = 'none';
-      localStorage.setItem('hasLanded', true)
+      // const landingCover = document.getElementById('landing-cover');
+      // landingCover.style.display = 'none';
+      // localStorage.setItem('hasLanded', true)
+      setLocation('/home');
     }, 2500);
   }
 

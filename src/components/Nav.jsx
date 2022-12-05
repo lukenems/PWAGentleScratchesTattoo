@@ -8,7 +8,7 @@ const Nav = () => {
       <div className="flex justify-between px-3">
         <ul className="flex space-x-3">
           <li>
-            <Link className="text-white" href="/">Home</Link>
+            <Link className="text-white" href="/home">Home</Link>
           </li>
           <li>
             <a className="text-white" href="https://www.instagram.com/gentlescratches/?hl=en">@GentleScratchesTattoo</a>

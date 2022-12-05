@@ -6,6 +6,7 @@ import Login from './pages/login';
 import CustomTattooForm from './components/CustomTattooForm';
 import EnsureAdmin from './protected/ensureAdmin';
 import CustomReqThanks from './pages/customReqThanks';
+import Home from './pages/home';
 
 export function App() {
 
@@ -15,6 +16,9 @@ export function App() {
       <Switch>
         <Route exact path='/'>
           <Landing />
+        </Route>
+        <Route exact path='/home'>
+          <Home />
         </Route>
         <Route exact path='/login'>
           <Login />
