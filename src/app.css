@@ -22,11 +22,7 @@
   color: #888;
 }
 
-/* Flash Scroll Styles */
-
-.flash-scroll {
-  height: 50vh;
-}
+/* Landing Page Styles */
 
 #landing-cover {
   display: flex;
@@ -45,48 +41,17 @@
   font-size: 2rem;
 }
 
-#landing-cover img {
+#logo {
   min-width: 150px;
   min-height: 150px;
   height: 300px;
+  width: 300px;
+  background-image: url('./assets/LandingLogo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.cover-fade {
-  animation-name: coverFade;
-  animation-duration: 1s;
-}
-
-/* Calendar Scroll Styles */
-
-.calendar-scroll {
-  height: 50vh;
-}
-
-/* ul.events {
-  height: 6rem;
-}
-
-iframe {
-  display: none;
-} */
-
-/* Media Queries */
-
-@media (min-width: 640px) {
-  .flash-scroll {
-    height: 100vh;
-  }
-  .calendar-scroll {
-    height: 100vh;
-  }
-}
-
-/* Animations */
-@keyframes coverFade {
-  0% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0%;
-  }
+#logo:hover {
+ background-image: url('./assets/RedLandingLogo.png');
+ background-position-x: -7px;
 }
