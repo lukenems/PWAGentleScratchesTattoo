@@ -49,9 +49,37 @@
   background-image: url('./assets/LandingLogo.png');
   background-size: contain;
   background-repeat: no-repeat;
+  border-radius: 50%;
 }
 
 #logo:hover {
  background-image: url('./assets/RedLandingLogo.png');
  background-position-x: -7px;
+}
+
+#bubble {
+  position: absolute;
+  width: 150px;
+  aspect-ratio: 1/1;
+  top: 60px;
+  left: -120px;
+  transform: scaleX(-1);
+}
+
+#berrytalk {
+  font-size: 12px;
+  position: absolute;
+  top: 110px;
+  left: -100px;
+  animation: 1s ease-in fadeIn ;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0%
+  }
+  to {
+    opacity: 100%
+  }
 }
