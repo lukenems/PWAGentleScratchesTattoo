@@ -78,6 +78,7 @@
   left: -102px;
   animation: .5s ease-in fadeIn;
   font-family: Rabenk;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
 
 /* Animations */
