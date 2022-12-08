@@ -35,7 +35,7 @@ const Landing = () => {
         <div className='flex relative'>
           <div id='logo' className='mb-12'onClick={enterClick}/>
           <img src={bubble} alt="" id="bubble" className='hidden'/>
-          <p id='berrytalk' className='hidden'>Enter here</p>
+          <p id='berrytalk' className='hidden'>Enter</p>
         </div>
         <h3>Welcome to</h3>
         <h1>Gentle Scratches Tattoo</h1>

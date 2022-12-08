@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Rabenk;
+  src: url('./assets/Rabenk-WyBOO.ttf');
+}
+
 #app {
   width:100%;
   height:100vh;
@@ -67,11 +72,12 @@
 }
 
 #berrytalk {
-  font-size: 12px;
+  font-size: 40px;
   position: absolute;
-  top: 110px;
-  left: -100px;
-  animation: 1s ease-in fadeIn ;
+  top: 112px;
+  left: -102px;
+  animation: .5s ease-in fadeIn;
+  font-family: Rabenk;
 }
 
 /* Animations */
