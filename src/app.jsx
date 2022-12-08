@@ -4,7 +4,7 @@ import Nav from './components/Nav';
 import Landing from './pages/landing';
 import Login from './pages/login';
 import CustomTattooForm from './components/CustomTattooForm';
-import EnsureAdmin from './protected/ensureAdmin';
+import EnsureAdmin from './protected/EnsureAdmin';
 import CustomReqThanks from './pages/customReqThanks';
 import Home from './pages/home';
 

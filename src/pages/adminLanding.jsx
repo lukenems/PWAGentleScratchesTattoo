@@ -1,4 +1,5 @@
 import FlashUpload from '../components/FlashUpload';
+import RecentCustomRequests from '../protected/RecentCustomRequests';
 import SchedulerEditor from '../protected/SchedulerEditor';
 
 const AdminLanding = () => {
@@ -25,7 +26,9 @@ const AdminLanding = () => {
         </div>
         <div className="flex flex-col w-1/3 items-center text-center py-2 px-2 sm:px-2 mx-3 bg-purple-900 border-2 rounded-r-lg border-white">
           <h1>Recent Custom Requests</h1>
-          <div className="px-3 bg-gray-500"></div>
+          <div className="px-3 bg-gray-500">
+            <RecentCustomRequests />
+          </div>
         </div>
       </div>
       <div className="flex flex-col h-auto w-1/3 items-center space-around py-12 px-4 m-auto my-6 sm:px-6 lg:px-8 bg-purple-900 border-2 rounded border-white">

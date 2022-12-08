@@ -4,7 +4,6 @@ import bubble from '../assets/speechBubble.svg';
 
 const Landing = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [buttonLoad, setButtonLoad] = useState(false);
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
@@ -39,6 +38,7 @@ const Landing = () => {
         </div>
         <h3>Welcome to</h3>
         <h1>Gentle Scratches Tattoo</h1>
+        {isLoaded && <p id='loadingtxt'>Loading . . .</p>}
       </div>
     </div>
   );

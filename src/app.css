@@ -81,6 +81,13 @@
   text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
 
+#loadingtxt {
+  font-size: 40px;
+  animation: 1s ease-in fadeIn;
+  font-family: Rabenk;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
